@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tinstuk</title>
+  <title>Tinstuk.</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -30,7 +30,7 @@
 	</nav>
 
 	<div class="navbar navbar-default navbar-fixed-top">
-	  
+
 		  <button type="button" class="navbar-toggle button-nav" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
 		  	<i class="fa fa-cog"></i>
 		  </button>
@@ -59,7 +59,7 @@
 <script type="text/javascript">
 
 	$(".spinner").hide();
-	
+
 	$("#tinderslide").jTinder({
 
 		    onDislike: function (item) {
@@ -69,7 +69,7 @@
 		        var myId = $("#tinderslide > ul li").last().attr("id");
 		        $("#user_" + myId)[0].click();
 		    },
-		    
+
 		    animationRevertSpeed: 200,
 		    animationSpeed: 400,
 		    threshold: 1,
@@ -85,7 +85,7 @@
 	$(".nav-btn").hover(function(){
 		$(this).addClass("active2");
 		}, function(){
-		$(this).removeClass("active2");	
+		$(this).removeClass("active2");
 	});
 
 

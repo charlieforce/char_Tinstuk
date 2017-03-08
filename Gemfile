@@ -53,15 +53,11 @@ gem 'bootstrap-sass'
 gem "autoprefixer-rails"
 gem 'font-awesome-sass'
 gem 'omniauth-facebook'
-gem "paperclip"
+# gem "paperclip"
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 gem 'aws-sdk', '< 2.0'
 gem 'simple_form'
 gem "cancan"
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem "figaro"
 gem 'utf8-cleaner'
-
-
-
-
-
