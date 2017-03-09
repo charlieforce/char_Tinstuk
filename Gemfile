@@ -59,5 +59,5 @@ gem 'aws-sdk', '< 2.0'
 gem 'simple_form'
 gem "cancan"
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
-gem "figaro"
+gem "dotenv-rails"
 gem 'utf8-cleaner'
