@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
 		session[:omniauth] = auth
 		user = User.sign_in_from_facebook(auth)
 		session[:user_id] = user.id
-		puts "session[:user_id]"
-		puts session[:user_id]
+		# puts "session[:user_id]"
+		# puts session[:user_id]
 		redirect_to root_url, notice: "Signed In"
 	end
 

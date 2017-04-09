@@ -7,14 +7,15 @@
 			<%= current_user.interest.capitalize %>
 			<span class="caret"></span>
 		</button>
-		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<%= f.input :interest, collection: ['Male', 'Female', 'Both'], :input_html => { class: 'form-control'} %>
+		<!-- <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 			<li role="presentation" class="dropdown-header"> Interested in</li>
-			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#">Female</a></li>
-			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#">Male</a></li>
-			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#">Both</a></li>
-		</ul>
+			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#" id='female' >Female</a></li>
+			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#" id='male' >Male</a></li>
+			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#" id='both' >Both</a></li>
+		</ul> -->
 	</div>
-	<%= f.input :interest, as: :hidden, label: false %>
+	<%# f.input :interest, as: :hidden, label: false %>
 
 	<h4 class="text-uppercase"><small>Profile Description</small></h4>
 	<%= f.input :bio, as: :text, class: "form-control", label: false, :input_html => { :rows => 5, class: 'form-control' } %>
