@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery.jTinder
 //= require jquery.easing.min
@@ -24,6 +23,3 @@
 //= require sweetalert.min
 //= require data-confirm-modal
 //= require_tree .
-
-
-
