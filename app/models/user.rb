@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id', dependent: :destroy
 
   has_attached_file :avatar,
-                    # :storage => :s3,
+                    :storage => :s3,
                     style: { medium: '370x370', thumb: '100x100' }
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def self.create_user_from_facebook(auth)
     create(
-      # avatar: process_uri(auth['info']['image'] + '?width=9999'),
+      avatar: process_uri(auth['info']['image'] + '?width=9999'),
       email: auth['info']['email'],
       provider: auth['provider'],
       uid: auth['uid'],
@@ -73,6 +73,7 @@ class User < ApplicationRecord
   private
 
   def self.process_uri(uri)
+    binding.pry
     avatar_url = URI.parse(uri)
     avatar_url.scheme = 'https'
     avatar_url.to_s
