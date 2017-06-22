@@ -7,9 +7,9 @@ Rails.application.configure do
   config.cache_classes = false
 
   config.paperclip_defaults = {
- :storage => :s3,
- :bucket => 'chuckie'
-}
+    storage: :s3,
+    bucket: 'chuckie'
+  }
 
   # Do not eager load code on boot.
   config.eager_load = false

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'home#index'
 
   resources :users do
@@ -9,17 +8,13 @@ Rails.application.routes.draw do
     end
   end
 
-  get   'auth/facebook/callback', to: "sessions#create"
-  match '/sign_out', to: "sessions#destroy", via: :delete
+  get   'auth/facebook/callback', to: 'sessions#create'
+  match '/sign_out', to: 'sessions#destroy', via: :delete
 
-  post   'create_friendship' => "friendships#create"
-  delete 'delete_friendship' => "friendships#destroy"
+  post   'create_friendship' => 'friendships#create'
+  delete 'delete_friendship' => 'friendships#destroy'
 
-  get 'matches/get_email' => "users#get_email"
-
-
-
-
+  get 'matches/get_email' => 'users#get_email'
 
   # get 'users/index'
 
@@ -83,5 +78,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
 end
