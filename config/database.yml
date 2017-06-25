@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: denis
+  password: password
+
+development:
+  <<: *default
+  database: char_tinstuk_development
+
+test:
+  <<: *default
+  database: char_tinstuk_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: char_tinstuk_production
+  pool: 5

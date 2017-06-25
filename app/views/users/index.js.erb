@@ -1,0 +1,8 @@
+<% if @users.count > 0 %>
+ // $("#tinderslide ul").replaceWith('<%= escape_javascript(render(partial: @users, collection: @users)) %>');
+ // $("#tinderslide > ul > li").tsort({attr: "id"});
+ // $("#tinderslide").jTinder();
+<% else %>
+    $('#users-container').replaceWith('<h1 class="text-center">No more users at this time</h1>');
+<% end %>
+
