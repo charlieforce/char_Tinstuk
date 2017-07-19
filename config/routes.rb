@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'posts#index'
 
   resources :users do
     member do
@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       get 'matches'
     end
   end
+  resources :posts, only: [:index, :new, :create, :destroy]
+  resources :comments
+  resource :interest, only: [:create, :destroy]
 
   get   'auth/facebook/callback', to: 'sessions#create'
   match '/sign_out', to: 'sessions#destroy', via: :delete

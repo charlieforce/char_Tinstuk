@@ -1,0 +1,15 @@
+<div data-post-id=<%=post.id %>>
+  <div>
+    <%= post.user.name %>
+  </div>
+  <div>
+    <%= post.text %>
+  </div>
+  <div>
+    <%= post.attachment %>
+  </div>
+  <div class="comments">
+    <%= render partial: 'comments/comment', collection: post.comments %>
+  </div>
+  <%= render partial: 'comments/form', locals: { post: post } %>
+</div>

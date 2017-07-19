@@ -1,0 +1,11 @@
+<div>
+  <%= form_for :comment, url: comments_path, remote: true do |form| %>
+    <%= form.hidden_field :post_id, value: post.id %>
+    <div>
+      <%= form.text_field :text, placeholder: 'Comment text is here' %>
+    </div>
+    <div>
+      <%= form.submit 'Add comment' %>
+    </div>
+  <% end %>
+</div>

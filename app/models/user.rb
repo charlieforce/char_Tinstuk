@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id', dependent: :destroy
+  has_many :user_interests
+  has_many :interests, through: :user_interests
+  has_many :posts
+  has_many :comments
 
   has_attached_file :avatar,
                     storage: :s3,

@@ -1,0 +1,6 @@
+$post = $("div").find("[data-post-id=<%=@comment.post.id%>]");
+$comments = $post.find("div.comments");
+$post.find('input#comment_text').val('');
+$post.find('input#comment_post_id').val("<%=@comment.post.id%>");
+$comments.append("<div data-comment-id=<%=@comment.id %>><strong> <%= @comment.user.name %> </strong> <% if @comment.user.id == current_user.id %> <%= escape_javascript(link_to 'x', comment_path(@comment.id), method: :delete, remote: true)%> <% end %> <p><%= @comment.text %> </p></div>");
+

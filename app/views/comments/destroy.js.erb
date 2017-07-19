@@ -1,0 +1,2 @@
+$post = $("div").find("[data-post-id=<%= @comment.post.id %>]");
+$post.find("[data-comment-id=<%= @comment.id %>]").remove();

@@ -1,0 +1,7 @@
+<div data-comment-id="<%= comment.id %>">
+  <strong> <%= comment.user.name %> </strong>
+  <% if comment.user == current_user %>
+    <%= link_to 'x', comment_path(comment.id), method: :delete, remote: true %>
+  <% end %>
+  <p><%= comment.text %> </p>
+</div>

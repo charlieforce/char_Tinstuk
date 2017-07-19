@@ -3,12 +3,6 @@
 <div class="container">
 	<div class="dropdown">
 		<%= f.input :interest, collection: ['Male', 'Female', 'Both'], :input_html => { class: 'form-control'} %>
-		<!-- <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-			<li role="presentation" class="dropdown-header"> Interested in</li>
-			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#" id='female' >Female</a></li>
-			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#" id='male' >Male</a></li>
-			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#" id='both' >Both</a></li>
-		</ul> -->
 	</div>
 	<%= f.input :gender, collection: ['Male', 'Female'], :input_html => { class: 'form-control'} %>
 	<%# f.input :interest, as: :hidden, label: false %>
@@ -43,6 +37,14 @@
 </div>
 
 <% end %>
+<div class="container">
+  <div class="dropdown">
+    <%= form_for :interest, url: interest_path, remote: true do |form| %>
+      <%= form.select :interest, interests: (Interest.all - current_user.interests).map { |m| [m.name, m.id] } %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>
 
 <script type="text/javascript">
 	$('.gender').click(function(){

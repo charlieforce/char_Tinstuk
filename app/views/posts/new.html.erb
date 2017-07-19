@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-2 col-md-offset-5">
+    <%= form_for @post do |form| %>
+      <div>
+        <%= form.text_field :text, placeholder: 'Post text' %>
+      </div>
+      <div>
+        <%= form.file_field :attachment %>
+      </div>
+      <div>
+        <%= form.select :interest_id, interests: current_user.interests.map { |m| [m.name, m.id] } %>
+      </div>
+      <div>
+        <%= form.submit 'Add post' %>
+      </div>
+    <% end %>
+  </div>
+</div>
